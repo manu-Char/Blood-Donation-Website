@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodLink - Upcoming Camps</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🩸</div>
+        BloodLink
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="camps.html" class="active">Camps</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+      <button class="nav-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- PAGE BANNER -->
+    <div class="page-banner">
+      <h1>Upcoming Blood Donation Camps</h1>
+      <p>
+        Find a camp near you and register to donate blood. Your one donation can
+        save up to 3 lives.
+      </p>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCamps('all', this)">
+        All Camps
+      </button>
+      <button class="filter-btn" onclick="filterCamps('emergency', this)">
+        🚨 Emergency
+      </button>
+      <button class="filter-btn" onclick="filterCamps('hospital', this)">
+        🏥 Hospital Camps
+      </button>
+      <button class="filter-btn" onclick="filterCamps('city', this)">
+        🌆 City Camps
+      </button>
+    </div>
+
+    <!-- CAMPS GRID -->
+    <div class="camps-grid">
+      <div class="camp-card" data-type="hospital">
+        <div class="camp-card-img">
+          🏥<span class="camp-badge badge-hospital">Hospital Camp</span>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-name">City General Hospital Annual Blood Drive</div>
+          <div class="camp-meta">
+            <div class="camp-meta-item">
+              <span class="meta-icon">📅</span> 15 April 2025, 9:00 AM – 4:00 PM
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">📍</span> City General Hospital, Pune
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">👤</span> Dr. Mehta Health Foundation
+            </div>
+          </div>
+        </div>
+        <div class="camp-card-footer">
+          <span class="camp-organizer">By <strong>City Hospital</strong></span>
+          <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </div>
+
+      <div class="camp-card" data-type="emergency">
+        <div class="camp-card-img">
+          🚨<span class="camp-badge">Emergency</span>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-name">Urgent O-Negative Blood Collection</div>
+          <div class="camp-meta">
+            <div class="camp-meta-item">
+              <span class="meta-icon">📅</span> 20 April 2025, 8:00 AM – 6:00 PM
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">📍</span> Community Hall, Nashik
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">👤</span> Red Cross Society
+            </div>
+          </div>
+        </div>
+        <div class="camp-card-footer">
+          <span class="camp-organizer">By <strong>Red Cross</strong></span>
+          <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </div>
+
+      <div class="camp-card" data-type="city">
+        <div class="camp-card-img">
+          🌆<span class="camp-badge badge-city">City Camp</span>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-name">Pune City Blood Donation Festival</div>
+          <div class="camp-meta">
+            <div class="camp-meta-item">
+              <span class="meta-icon">📅</span> 25 April 2025, 10:00 AM – 5:00
+              PM
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">📍</span> Bal Gandharva Rang Mandir, Pune
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">👤</span> Pune Municipal Corporation
+            </div>
+          </div>
+        </div>
+        <div class="camp-card-footer">
+          <span class="camp-organizer">By <strong>PMC</strong></span>
+          <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </div>
+
+      <div class="camp-card" data-type="hospital">
+        <div class="camp-card-img">
+          💉<span class="camp-badge badge-hospital">Hospital Camp</span>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-name">Sahyadri Hospital Quarterly Donation Camp</div>
+          <div class="camp-meta">
+            <div class="camp-meta-item">
+              <span class="meta-icon">📅</span> 2 May 2025, 9:00 AM – 3:00 PM
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">📍</span> Sahyadri Hospital, Deccan, Pune
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">👤</span> Sahyadri Medical Trust
+            </div>
+          </div>
+        </div>
+        <div class="camp-card-footer">
+          <span class="camp-organizer">By <strong>Sahyadri Trust</strong></span>
+          <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </div>
+
+      <div class="camp-card" data-type="emergency">
+        <div class="camp-card-img">
+          ⚡<span class="camp-badge">Emergency</span>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-name">Emergency Platelet Donation Drive</div>
+          <div class="camp-meta">
+            <div class="camp-meta-item">
+              <span class="meta-icon">📅</span> 5 May 2025, 7:00 AM – 7:00 PM
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">📍</span> Ruby Hall Clinic, Pune
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">👤</span> Ruby Hall Foundation
+            </div>
+          </div>
+        </div>
+        <div class="camp-card-footer">
+          <span class="camp-organizer">By <strong>Ruby Hall</strong></span>
+          <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </div>
+
+      <div class="camp-card" data-type="city">
+        <div class="camp-card-img">
+          🏙️<span class="camp-badge badge-city">City Camp</span>
+        </div>
+        <div class="camp-card-body">
+          <div class="camp-name">Nashik Youth Blood Donation Camp</div>
+          <div class="camp-meta">
+            <div class="camp-meta-item">
+              <span class="meta-icon">📅</span> 10 May 2025, 9:00 AM – 4:00 PM
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">📍</span> Central Park, Nashik
+            </div>
+            <div class="camp-meta-item">
+              <span class="meta-icon">👤</span> Nashik Youth Association
+            </div>
+          </div>
+        </div>
+        <div class="camp-card-footer">
+          <span class="camp-organizer">By <strong>NYA</strong></span>
+          <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </div>
+    </div>
+    <!-- end camps-grid -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="nav-logo">
+              <div class="logo-icon">🩸</div>
+              BloodLink
+            </div>
+            <p>A community-driven blood donation camp management system.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="camps.html">Camps</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+<footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="nav-logo">
+              <div class="logo-icon">🩸</div>
+              BloodLink
+            </div>
+            <p>
+              A community-driven blood donation camp management system
+              connecting donors with patients in need across India.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="camps.html">Camps</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Why Donate?</a></li>
+              <li><a href="#">Eligibility</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item">📧 help@bloodlink.org</div>
+            <div class="footer-contact-item">📞 251153-251153</div>
+            <div class="footer-contact-item">📍 Maharashtra, India</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 BloodLink</span>
+          <span>Made with ❤️ to save lives</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

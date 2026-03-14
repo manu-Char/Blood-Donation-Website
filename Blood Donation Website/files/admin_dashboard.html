@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodLink - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><div class="logo-icon">🩸</div>
+        BloodLink
+        <span
+          style="
+            font-size: 0.75rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            font-weight: 800;
+          "
+          >ADMIN</span
+        ></a
+      >
+      <div class="nav-actions">
+        <span
+          style="font-size: 0.9rem; color: var(--text-mid); font-weight: 600"
+          >🛡️ Admin</span
+        >
+        <a href="admin_login.html" class="btn btn-outline btn-sm">Logout</a>
+      </div>
+    </nav>
+
+    <div class="dashboard-layout">
+      <!-- ADMIN SIDEBAR -->
+      <aside class="sidebar admin-sidebar">
+        <div class="sidebar-user">
+          <div
+            class="sidebar-avatar"
+            style="background: linear-gradient(135deg, #e53e3e, #c53030)"
+          >
+            A
+          </div>
+          <div class="sidebar-name">Administrator</div>
+          <span class="sidebar-blood-badge">Admin Panel</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a
+            href="#"
+            class="sidebar-nav-item active"
+            onclick="showSection('overview')"
+            ><span class="nav-icon">📊</span> Overview</a
+          >
+          <a href="#" class="sidebar-nav-item" onclick="showSection('camps')"
+            ><span class="nav-icon">🏕️</span> Manage Camps</a
+          >
+          <a href="#" class="sidebar-nav-item" onclick="showSection('donors')"
+            ><span class="nav-icon">👥</span> View Donors</a
+          >
+          <a
+            href="#"
+            class="sidebar-nav-item"
+            onclick="showSection('registrations')"
+            ><span class="nav-icon">📋</span> Registrations</a
+          >
+          <a
+            href="admin_login.html"
+            class="sidebar-nav-item logout-item"
+            style="margin-top: auto"
+            ><span class="nav-icon">🚪</span> Logout</a
+          >
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+        <!-- OVERVIEW SECTION -->
+        <div id="section-overview">
+          <div class="dashboard-heading">
+            <h2>Admin Dashboard 🛡️</h2>
+            <p>Manage all blood donation camps, donors, and registrations.</p>
+          </div>
+          <div class="dash-stats" style="grid-template-columns: repeat(4, 1fr)">
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon blue">🏕️</div>
+              <div class="dash-stat-info">
+                <div class="num">6</div>
+                <div class="lbl">Total Camps</div>
+              </div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon red">👥</div>
+              <div class="dash-stat-info">
+                <div class="num">42</div>
+                <div class="lbl">Donors</div>
+              </div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon green">📋</div>
+              <div class="dash-stat-info">
+                <div class="num">87</div>
+                <div class="lbl">Registrations</div>
+              </div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon blue">🩸</div>
+              <div class="dash-stat-info">
+                <div class="num">120</div>
+                <div class="lbl">Units Collected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MANAGE CAMPS SECTION -->
+        <div id="section-camps">
+          <div
+            class="dashboard-heading"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              flex-wrap: wrap;
+              gap: 12px;
+            "
+          >
+            <div>
+              <h2>Manage Camps 🏕️</h2>
+              <p>Add, edit, or delete blood donation camps.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('addCampModal')">
+              + Add New Camp
+            </button>
+          </div>
+
+          <div class="dash-block">
+            <div class="dash-block-header"><h3>All Camps</h3></div>
+            <div class="dash-block-body" style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Camp Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Organizer</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><strong>City General Hospital Blood Drive</strong></td>
+                    <td>15 Apr 2025</td>
+                    <td>Pune</td>
+                    <td>Dr. Mehta Foundation</td>
+                    <td><span class="badge badge-blue">Hospital</span></td>
+                    <td>
+                      <div class="action-buttons">
+                        <button
+                          class="btn btn-outline btn-sm"
+                          onclick="openModal('editCampModal')"
+                        >
+                          ✏️ Edit
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          onclick="confirmDelete()"
+                        >
+                          🗑️ Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><strong>Urgent O-Negative Drive</strong></td>
+                    <td>20 Apr 2025</td>
+                    <td>Nashik</td>
+                    <td>Red Cross</td>
+                    <td><span class="badge badge-red">Emergency</span></td>
+                    <td>
+                      <div class="action-buttons">
+                        <button
+                          class="btn btn-outline btn-sm"
+                          onclick="openModal('editCampModal')"
+                        >
+                          ✏️ Edit
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          onclick="confirmDelete()"
+                        >
+                          🗑️ Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><strong>Pune City Blood Festival</strong></td>
+                    <td>25 Apr 2025</td>
+                    <td>Pune</td>
+                    <td>PMC</td>
+                    <td><span class="badge badge-green">City</span></td>
+                    <td>
+                      <div class="action-buttons">
+                        <button
+                          class="btn btn-outline btn-sm"
+                          onclick="openModal('editCampModal')"
+                        >
+                          ✏️ Edit
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          onclick="confirmDelete()"
+                        >
+                          🗑️ Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- DONORS SECTION -->
+        <div id="section-donors" style="display: none">
+          <div class="dashboard-heading">
+            <h2>Registered Donors 👥</h2>
+            <p>View all registered blood donors.</p>
+          </div>
+          <div class="dash-block">
+            <div class="dash-block-header"><h3>All Donors</h3></div>
+            <div class="dash-block-body" style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Blood Group</th>
+                    <th>City</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><strong>Vikram Patel</strong></td>
+                    <td>34</td>
+                    <td>Male</td>
+                    <td><span class="badge badge-red">B+</span></td>
+                    <td>Pune</td>
+                    <td>98230-45678</td>
+                    <td>vikram.patel@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><strong>Anjali Deshmukh</strong></td>
+                    <td>28</td>
+                    <td>Female</td>
+                    <td><span class="badge badge-red">O+</span></td>
+                    <td>Mumbai</td>
+                    <td>98765-43210</td>
+                    <td>anjali.d@rediffmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><strong>Rajesh Kumar</strong></td>
+                    <td>42</td>
+                    <td>Male</td>
+                    <td><span class="badge badge-red">A+</span></td>
+                    <td>Nagpur</td>
+                    <td>97654-32109</td>
+                    <td>r.kumar@yahoo.com</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><strong>Smita Jadhav</strong></td>
+                    <td>26</td>
+                    <td>Female</td>
+                    <td><span class="badge badge-red">AB+</span></td>
+                    <td>Nashik</td>
+                    <td>99887-76655</td>
+                    <td>smita.jadhav@gmail.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- REGISTRATIONS SECTION -->
+        <div id="section-registrations" style="display: none">
+          <div class="dashboard-heading">
+            <h2>Camp Registrations 📋</h2>
+            <p>View all donor-camp registrations.</p>
+          </div>
+          <div class="dash-block">
+            <div class="dash-block-header"><h3>All Registrations</h3></div>
+            <div class="dash-block-body" style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Donor Name</th>
+                    <th>Blood Group</th>
+                    <th>Camp Name</th>
+                    <th>Camp Date</th>
+                    <th>Registered On</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Vikram Patel</td>
+                    <td><span class="badge badge-red">B+</span></td>
+                    <td>Sahyadri Hospital Camp</td>
+                    <td>2 May 2025</td>
+                    <td>10 Apr 2025</td>
+                    <td><span class="badge badge-green">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Anjali Deshmukh</td>
+                    <td><span class="badge badge-red">O+</span></td>
+                    <td>Nashik Youth Camp</td>
+                    <td>10 May 2025</td>
+                    <td>8 Apr 2025</td>
+                    <td><span class="badge badge-yellow">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Rajesh Kumar</td>
+                    <td><span class="badge badge-red">A+</span></td>
+                    <td>City Hospital Blood Drive</td>
+                    <td>15 Apr 2025</td>
+                    <td>5 Apr 2025</td>
+                    <td><span class="badge badge-green">Confirmed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ADD CAMP MODAL -->
+    <div class="modal-overlay" id="addCampModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('addCampModal')">
+          ✕
+        </button>
+        <h3>➕ Add New Camp</h3>
+        <form style="display: flex; flex-direction: column; gap: 16px">
+          <div class="form-group">
+            <label>Camp Name <span class="required">*</span></label
+            ><input type="text" placeholder="Enter camp name" />
+          </div>
+          <div class="form-group">
+            <label>Date <span class="required">*</span></label
+            ><input type="date" />
+          </div>
+          <div class="form-group">
+            <label>Location <span class="required">*</span></label
+            ><input type="text" placeholder="City, Address" />
+          </div>
+          <div class="form-group">
+            <label>Organizer <span class="required">*</span></label
+            ><input type="text" placeholder="Organizer name" />
+          </div>
+          <div class="form-group">
+            <label>Description</label
+            ><input type="text" placeholder="Brief description" />
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 4px">
+            <button type="submit" class="btn btn-primary" style="flex: 1">
+              Save Camp
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline"
+              onclick="closeModal('addCampModal')"
+              style="flex: 1"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- EDIT CAMP MODAL -->
+    <div class="modal-overlay" id="editCampModal">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal('editCampModal')">
+          ✕
+        </button>
+        <h3>✏️ Edit Camp</h3>
+        <form style="display: flex; flex-direction: column; gap: 16px">
+          <div class="form-group">
+            <label>Camp Name</label
+            ><input type="text" value="City General Hospital Blood Drive" />
+          </div>
+          <div class="form-group">
+            <label>Date</label><input type="date" value="2025-04-15" />
+          </div>
+          <div class="form-group">
+            <label>Location</label><input type="text" value="Pune" />
+          </div>
+          <div class="form-group">
+            <label>Organizer</label
+            ><input type="text" value="Dr. Mehta Foundation" />
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 4px">
+            <button type="submit" class="btn btn-primary" style="flex: 1">
+              Update Camp
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline"
+              onclick="closeModal('editCampModal')"
+              style="flex: 1"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

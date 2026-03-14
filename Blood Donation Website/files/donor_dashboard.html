@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodLink - Donor Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><div class="logo-icon">🩸</div>
+        BloodLink</a
+      >
+      <div class="nav-actions">
+        <span
+          style="font-size: 0.9rem; color: var(--text-mid); font-weight: 600"
+          >👋 Hello, Vikram</span
+        >
+        <a href="login.html" class="btn btn-outline btn-sm">Logout</a>
+      </div>
+    </nav>
+
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-user">
+          <div class="sidebar-avatar">V</div>
+          <div class="sidebar-name">Vikram Patel</div>
+          <span class="sidebar-blood-badge">B+</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="donor_dashboard.html" class="sidebar-nav-item active">
+            <span class="nav-icon">🏠</span> Dashboard
+          </a>
+          <a href="camps.html" class="sidebar-nav-item">
+            <span class="nav-icon">🏕️</span> View Camps
+          </a>
+          <a href="donor_profile.html" class="sidebar-nav-item">
+            <span class="nav-icon">👤</span> My Profile
+          </a>
+          <a
+            href="login.html"
+            class="sidebar-nav-item logout-item"
+            style="margin-top: auto"
+          >
+            <span class="nav-icon">🚪</span> Logout
+          </a>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+        <div class="dashboard-heading">
+          <h2>Welcome back, Vikram! 👋</h2>
+          <p>Here's a summary of your blood donation activity.</p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="dash-stats">
+          <div class="dash-stat-card">
+            <div class="dash-stat-icon blue">🩸</div>
+            <div class="dash-stat-info">
+              <div class="num">3</div>
+              <div class="lbl">Total Donations</div>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-icon red">📋</div>
+            <div class="dash-stat-info">
+              <div class="num">2</div>
+              <div class="lbl">Registered Camps</div>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <div class="dash-stat-icon green">❤️</div>
+            <div class="dash-stat-info">
+              <div class="num">9</div>
+              <div class="lbl">Lives Potentially Saved</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Camps -->
+        <div class="dash-block">
+          <div class="dash-block-header">
+            <h3>🏕️ Upcoming Donation Camps</h3>
+            <a href="camps.html" class="btn btn-primary btn-sm">View All</a>
+          </div>
+          <div class="dash-block-body">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Camp Name</th>
+                  <th>Date</th>
+                  <th>Location</th>
+                  <th>Organizer</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>City General Hospital Blood Drive</strong></td>
+                  <td>15 Apr 2025</td>
+                  <td>Pune</td>
+                  <td>Dr. Mehta Foundation</td>
+                  <td>
+                    <a href="#" class="btn btn-primary btn-sm">Register</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Pune City Blood Festival</strong></td>
+                  <td>25 Apr 2025</td>
+                  <td>Pune</td>
+                  <td>PMC</td>
+                  <td>
+                    <a href="#" class="btn btn-primary btn-sm">Register</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Emergency O-Neg Drive</strong></td>
+                  <td>20 Apr 2025</td>
+                  <td>Nashik</td>
+                  <td>Red Cross</td>
+                  <td>
+                    <a href="#" class="btn btn-primary btn-sm">Register</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- My Registrations -->
+        <div class="dash-block">
+          <div class="dash-block-header">
+            <h3>📋 My Camp Registrations</h3>
+          </div>
+          <div class="dash-block-body">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Camp Name</th>
+                  <th>Date</th>
+                  <th>Location</th>
+                  <th>Registered On</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sahyadri Hospital Camp</strong></td>
+                  <td>2 May 2025</td>
+                  <td>Pune</td>
+                  <td>10 Apr 2025</td>
+                  <td><span class="badge badge-green">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nashik Youth Camp</strong></td>
+                  <td>10 May 2025</td>
+                  <td>Nashik</td>
+                  <td>8 Apr 2025</td>
+                  <td><span class="badge badge-yellow">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

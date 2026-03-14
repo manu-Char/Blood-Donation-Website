@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodLink - Donate Blood. Save Lives.</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🩸</div>
+        BloodLink
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="camps.html">Camps</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Left content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            National Blood Donation Initiative
+          </div>
+          <h1 class="hero-title">
+            Donate <span class="highlight-red">Blood.</span><br />
+            Save <span class="highlight">Lives.</span>
+          </h1>
+          <p class="hero-desc">
+            Every drop counts. Join thousands of voluntary blood donors and
+            connect with blood donation camps near you. Register today and
+            become a lifesaver in your community.
+          </p>
+          <div class="hero-buttons">
+            <a href="register.html" class="btn btn-primary btn-lg"
+              >🩸 Register as Donor</a
+            >
+            <a href="camps.html" class="btn btn-outline btn-lg"
+              >🏥 View Donation Camps</a
+            >
+          </div>
+        </div>
+
+        <!-- Right illustration -->
+        <div class="hero-image">
+          <div class="hero-illustration">
+            <div class="hero-illus-inner">
+              <span class="hero-illus-icon">🩺</span>
+              <div class="hero-illus-text">
+                <h3>Blood Donation Camp</h3>
+                <p>Safe · Voluntary · Life-Saving</p>
+              </div>
+              <!-- Mini info chips -->
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  margin-top: 8px;
+                "
+              >
+                <div
+                  style="
+                    background: var(--primary-light);
+                    border-radius: 8px;
+                    padding: 8px 14px;
+                    font-size: 0.82rem;
+                    font-weight: 700;
+                    color: var(--primary);
+                  "
+                >
+                  ✅ Safe Process
+                </div>
+                <div
+                  style="
+                    background: #fff0f0;
+                    border-radius: 8px;
+                    padding: 8px 14px;
+                    font-size: 0.82rem;
+                    font-weight: 700;
+                    color: var(--accent);
+                  "
+                >
+                  🩸 Type A, B, O, AB
+                </div>
+                <div
+                  style="
+                    background: #f0fff4;
+                    border-radius: 8px;
+                    padding: 8px 14px;
+                    font-size: 0.82rem;
+                    font-weight: 700;
+                    color: #276749;
+                  "
+                >
+                  💚 Free Health Check
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating chips -->
+          <div class="hero-chip chip-top">
+            <span class="chip-icon">🏆</span>
+            <div>
+              <div class="chip-value">500+</div>
+              <div class="chip-label">Donors Registered</div>
+            </div>
+          </div>
+          <div class="hero-chip chip-bottom">
+            <span class="chip-icon">💉</span>
+            <div>
+              <div class="chip-value">1000+</div>
+              <div class="chip-label">Units Donated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon">🏕️</span>
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Camps Organized</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">👥</span>
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Registered Donors</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🩸</span>
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Units of Blood Donated</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🏥</span>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Partner Hospitals</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section section-alt" id="about">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="section-tag">About BloodLink</span>
+          <h2 class="about-title">
+            Connecting Donors<br />With Patients In Need
+          </h2>
+          <p class="about-desc">
+            BloodLink is a community-driven blood donation management platform
+            dedicated to bridging the gap between voluntary blood donors and
+            patients who urgently need blood.
+          </p>
+          <p class="about-desc">
+            We organize and manage blood donation camps across the city, making
+            it easy for donors to find nearby camps, register, and contribute to
+            saving lives.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="feature-icon-box">🎯</div>
+              <div class="feature-text">
+                <h4>Our Mission</h4>
+                <p>
+                  Promote voluntary blood donation and ensure timely blood
+                  availability for all patients.
+                </p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon-box">🤝</div>
+              <div class="feature-text">
+                <h4>Community First</h4>
+                <p>
+                  We work with local hospitals and organizations to organize
+                  regular donation camps.
+                </p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="feature-icon-box">🔒</div>
+              <div class="feature-text">
+                <h4>Safe &amp; Verified</h4>
+                <p>
+                  All camps are organized under medical supervision with
+                  certified healthcare professionals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-wrap">
+          <div class="about-image-card">
+            <span class="big-icon">🏥</span>
+          </div>
+          <div class="about-floating-card">
+            <span class="afc-icon">❤️</span>
+            <div>
+              <div class="afc-text">Lives Saved</div>
+              <div class="afc-value">3,000+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UPCOMING CAMPS PREVIEW ===== -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-tag">Upcoming Events</span>
+        <h2 class="section-title">Blood Donation Camps Near You</h2>
+        <p class="section-desc">
+          Join one of our upcoming camps and make a difference. Every donation
+          can save up to 3 lives.
+        </p>
+      </div>
+      <div class="camps-grid" style="padding: 0 0 0 0">
+        <!-- Camp Card 1 -->
+        <div class="camp-card">
+          <div class="camp-card-img">
+            🏥
+            <span class="camp-badge badge-hospital">Hospital Camp</span>
+          </div>
+          <div class="camp-card-body">
+            <div class="camp-name">City General Hospital Blood Drive</div>
+            <div class="camp-meta">
+              <div class="camp-meta-item">
+                <span class="meta-icon">📅</span> 15 April 2025
+              </div>
+              <div class="camp-meta-item">
+                <span class="meta-icon">📍</span> Ruby Hospital, Pune
+              </div>
+              <div class="camp-meta-item">
+                <span class="meta-icon">👤</span> Dr. Mehta Health Foundation
+              </div>
+            </div>
+          </div>
+          <div class="camp-card-footer">
+            <span class="camp-organizer"
+              >By <strong>City Hospital</strong></span
+            >
+            <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+          </div>
+        </div>
+        <!-- Camp Card 2 -->
+        <div class="camp-card">
+          <div class="camp-card-img">
+            🏢
+            <span class="camp-badge">Emergency</span>
+          </div>
+          <div class="camp-card-body">
+            <div class="camp-name">Emergency Blood Collection Drive</div>
+            <div class="camp-meta">
+              <div class="camp-meta-item">
+                <span class="meta-icon">📅</span> 20 April 2025
+              </div>
+              <div class="camp-meta-item">
+                <span class="meta-icon">📍</span> Community Hall, Nashik
+              </div>
+              <div class="camp-meta-item">
+                <span class="meta-icon">👤</span> Red Cross Society
+              </div>
+            </div>
+          </div>
+          <div class="camp-card-footer">
+            <span class="camp-organizer">By <strong>Red Cross</strong></span>
+            <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+          </div>
+        </div>
+        <!-- Camp Card 3 -->
+        <div class="camp-card">
+          <div class="camp-card-img">
+            🌆
+            <span class="camp-badge badge-city">City Camp</span>
+          </div>
+          <div class="camp-card-body">
+            <div class="camp-name">Pune City Blood Donation Festival</div>
+            <div class="camp-meta">
+              <div class="camp-meta-item">
+                <span class="meta-icon">📅</span> 25 April 2025
+              </div>
+              <div class="camp-meta-item">
+                <span class="meta-icon">📍</span> Bal Gandharva Rang Mandir,
+                Pune
+              </div>
+              <div class="camp-meta-item">
+                <span class="meta-icon">👤</span> Pune Municipal Corporation
+              </div>
+            </div>
+          </div>
+          <div class="camp-card-footer">
+            <span class="camp-organizer">By <strong>PMC</strong></span>
+            <a href="login.html" class="btn btn-primary btn-sm">Register</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 16px">
+        <a href="camps.html" class="btn btn-outline btn-lg">View All Camps →</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="nav-logo">
+              <div class="logo-icon">🩸</div>
+              BloodLink
+            </div>
+            <p>
+              A community-driven blood donation camp management system
+              connecting donors with patients in need across India.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="camps.html">Camps</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Why Donate?</a></li>
+              <li><a href="#">Eligibility</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item">📧 help@bloodlink.org</div>
+            <div class="footer-contact-item">📞 251153-251153</div>
+            <div class="footer-contact-item">📍 Maharashtra, India</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 BloodLink</span>
+          <span>Made with ❤️ to save lives</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

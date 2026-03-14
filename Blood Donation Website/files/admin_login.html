@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodLink - Admin Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><div class="logo-icon">🩸</div>
+        BloodLink</a
+      >
+    </nav>
+
+    <div class="form-page">
+      <div class="form-card" style="max-width: 420px">
+        <div class="form-card-header">
+          <div class="form-card-icon">🛡️</div>
+          <h2>Admin Login</h2>
+          <p>Access the admin control panel</p>
+        </div>
+
+        <form
+          id="adminLoginForm"
+          method="POST"
+          action="/admin/login"
+          novalidate
+        >
+          <div style="display: flex; flex-direction: column; gap: 18px">
+            <div class="form-group">
+              <label for="username"
+                >Username <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="adminUser"
+                name="username"
+                placeholder="Admin username"
+              />
+              <span class="field-error" id="adminUserError"
+                >Please enter username.</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="password"
+                >Password <span class="required">*</span></label
+              >
+              <input
+                type="password"
+                id="adminPass"
+                name="password"
+                placeholder="Admin password"
+              />
+              <span class="field-error" id="adminPassError"
+                >Please enter password.</span
+              >
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">
+              🛡️ Admin Login
+            </button>
+          </div>
+        </form>
+
+        <p class="form-footer-text" style="margin-top: 16px">
+          Donor? <a href="login.html">Donor Login</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

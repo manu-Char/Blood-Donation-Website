@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodLink - My Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><div class="logo-icon">🩸</div>
+        BloodLink</a
+      >
+      <div class="nav-actions">
+        <span
+          style="font-size: 0.9rem; color: var(--text-mid); font-weight: 600"
+          >👋 Hello, Vikram</span
+        >
+        <a href="login.html" class="btn btn-outline btn-sm">Logout</a>
+      </div>
+    </nav>
+
+    <div class="dashboard-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-user">
+          <div class="sidebar-avatar">V</div>
+          <div class="sidebar-name">Vikram Patel</div>
+          <span class="sidebar-blood-badge">B+</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="donor_dashboard.html" class="sidebar-nav-item"
+            ><span class="nav-icon">🏠</span> Dashboard</a
+          >
+          <a href="camps.html" class="sidebar-nav-item"
+            ><span class="nav-icon">🏕️</span> View Camps</a
+          >
+          <a href="donor_profile.html" class="sidebar-nav-item active"
+            ><span class="nav-icon">👤</span> My Profile</a
+          >
+          <a
+            href="login.html"
+            class="sidebar-nav-item logout-item"
+            style="margin-top: auto"
+            ><span class="nav-icon">🚪</span> Logout</a
+          >
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="dashboard-main" style="padding: 36px 40px">
+        <div class="dashboard-heading">
+          <h2>My Profile</h2>
+          <p>View and manage your donor information</p>
+        </div>
+
+        <div class="profile-layout" style="padding: 0; max-width: 100%">
+          <!-- Profile Card -->
+          <div class="profile-card">
+            <div class="profile-card-top">
+              <div class="profile-avatar">👤</div>
+              <div class="profile-name">Vikram Patel</div>
+              <div style="margin-bottom: 10px"></div>
+              <span class="profile-blood-badge">B+ Blood Group</span>
+            </div>
+            <div class="profile-card-body">
+              <div class="profile-detail-item">
+                <span class="lbl">Age</span><span class="val">34 years</span>
+              </div>
+              <div class="profile-detail-item">
+                <span class="lbl">Gender</span><span class="val">Male</span>
+              </div>
+              <div class="profile-detail-item">
+                <span class="lbl">City</span><span class="val">Pune</span>
+              </div>
+              <div class="profile-detail-item">
+                <span class="lbl">Phone</span
+                ><span class="val">98230-45678</span>
+              </div>
+              <div class="profile-detail-item">
+                <span class="lbl">Email</span
+                ><span class="val" style="font-size: 0.8rem"
+                  >vikram.patel@gmail.com</span
+                >
+              </div>
+              <div class="profile-detail-item">
+                <span class="lbl">Member Since</span
+                ><span class="val">January 2024</span>
+              </div>
+            </div>
+            <div style="padding: 0 20px 20px">
+              <a href="#" class="btn btn-outline btn-full btn-sm"
+                >✏️ Edit Profile</a
+              >
+            </div>
+          </div>
+
+          <!-- Right side -->
+          <div class="profile-right">
+            <!-- Donation History -->
+            <div class="profile-section">
+              <div class="profile-section-header">
+                <span class="sec-icon">🩸</span> Donation History
+              </div>
+              <div class="profile-section-body">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Camp Name</th>
+                      <th>Date</th>
+                      <th>Location</th>
+                      <th>Units</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>City Hospital Blood Drive</td>
+                      <td>Jan 2025</td>
+                      <td>Pune</td>
+                      <td><span class="badge badge-red">1 Unit</span></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Red Cross Emergency Drive</td>
+                      <td>Feb 2025</td>
+                      <td>Nashik</td>
+                      <td><span class="badge badge-red">1 Unit</span></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Sahyadri Hospital Camp</td>
+                      <td>Mar 2025</td>
+                      <td>Pune</td>
+                      <td><span class="badge badge-red">1 Unit</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Registered Camps -->
+            <div class="profile-section">
+              <div class="profile-section-header">
+                <span class="sec-icon">📋</span> Registered Camps
+              </div>
+              <div class="profile-section-body">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Camp Name</th>
+                      <th>Date</th>
+                      <th>Location</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sahyadri Hospital Camp</td>
+                      <td>2 May 2025</td>
+                      <td>Pune</td>
+                      <td><span class="badge badge-green">Confirmed</span></td>
+                    </tr>
+                    <tr>
+                      <td>Nashik Youth Camp</td>
+                      <td>10 May 2025</td>
+                      <td>Nashik</td>
+                      <td><span class="badge badge-yellow">Pending</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>
